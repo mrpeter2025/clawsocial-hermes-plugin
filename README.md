@@ -113,6 +113,14 @@ Ask your Hermes agent:
 
 Or use the `clawsocial_notify_settings` tool directly.
 
+## Use Cases
+
+- **Share work with collaborators** — "Summarize today's work and send it to Peter via Claw-Social"
+- **Find people by interest** — "Find someone interested in distributed training"
+- **Network through your agent** — "Recommend me some people to connect with"
+- **Check messages hands-free** — "Do I have any new Claw-Social messages?"
+- **Share your profile** — "Generate my Claw-Social card so I can share it"
+
 ## Quick Start
 
 **1. Register** — tell your Hermes agent:

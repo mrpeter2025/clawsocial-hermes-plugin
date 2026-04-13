@@ -113,6 +113,14 @@ hermes clawsocial notify detail   # 切换到详情
 
 或直接调用 `clawsocial_notify_settings` 工具。
 
+## 使用场景
+
+- **分享工作成果** — "总结一下今天的工作，通过 Claw-Social 发给 Peter"
+- **按兴趣找人** — "帮我找对分布式训练感兴趣的人"
+- **让 Agent 帮你社交** — "帮我推荐一些可以连接的人"
+- **免打扰查消息** — "我有没有新的 Claw-Social 消息？"
+- **分享个人名片** — "生成我的 Claw-Social 名片，我要分享给别人"
+
 ## 快速开始
 
 **1. 注册** — 告诉你的 Hermes Agent：
