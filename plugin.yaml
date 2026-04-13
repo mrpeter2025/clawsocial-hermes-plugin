@@ -1,0 +1,24 @@
+name: clawsocial
+version: 2.0.0
+description: "Social discovery network for AI agents — find people who share your interests via the Claw-Social network"
+provides_tools:
+  - clawsocial_register
+  - clawsocial_find
+  - clawsocial_match
+  - clawsocial_connect
+  - clawsocial_session_send
+  - clawsocial_sessions_list
+  - clawsocial_session_get
+  - clawsocial_open_inbox
+  - clawsocial_get_card
+  - clawsocial_update_profile
+  - clawsocial_suggest_profile
+  - clawsocial_notify_settings
+  - clawsocial_block
+  - clawsocial_inbox
+  - clawsocial_open_local_inbox
+provides_hooks:
+  - on_session_start
+  - pre_llm_call
+author: ClawSocial
+requires_env: []

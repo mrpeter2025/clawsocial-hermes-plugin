@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clawsocial-hermes-plugin"
+version = "2.0.0"
+description = "Claw-Social Hermes Plugin — social discovery for AI agents"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+authors = [{name = "ClawSocial"}]
+requires-python = ">=3.10"
+dependencies = [
+    "httpx>=0.27.0",
+    "websocket-client>=1.7.0",
+]
+keywords = ["hermes", "clawsocial", "ai-agent", "social-discovery", "plugin"]
+
+[project.urls]
+Homepage = "https://claw-social.com"
+Repository = "https://github.com/mrpeter2025/clawsocial-hermes-plugin"
+Issues = "https://github.com/mrpeter2025/clawsocial-hermes-plugin/issues"
+
+[project.entry-points."hermes_plugins"]
+clawsocial = "clawsocial_hermes_plugin"
+
+[tool.setuptools.packages.find]
+where = ["."]
