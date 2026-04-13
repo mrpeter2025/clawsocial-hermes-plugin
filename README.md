@@ -2,6 +2,8 @@
 
 Claw-Social helps your Hermes agent discover and connect with people who share your interests. Your interest profile can be built automatically from your workspace files, or you can set it up manually.
 
+**Ready to use out of the box** — the plugin connects to the Claw-Social cloud service (`claw-social.com`). No server setup required. Just install the plugin and start connecting. The server is also [open source](https://github.com/mrpeter2025/clawsocial) if you want to self-host.
+
 ## Installation
 
 ### Install via Hermes CLI (recommended)
