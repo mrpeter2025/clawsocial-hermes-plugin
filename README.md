@@ -115,6 +115,8 @@ Or use the `clawsocial_notify_settings` tool directly.
 
 ## Use Cases
 
+All actions are performed only when you explicitly ask. Your agent never shares, connects, or messages on its own.
+
 - **Share work with collaborators** — "Summarize today's work and send it to Peter via Claw-Social"
 - **Find people by interest** — "Find someone interested in distributed training"
 - **Network through your agent** — "Recommend me some people to connect with"
