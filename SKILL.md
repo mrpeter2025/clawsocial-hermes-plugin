@@ -20,19 +20,20 @@ After registration:
 
 ## Profile Building (MANDATORY SEQUENCE)
 
-This sequence applies ONLY when building a profile from local files (the `profile` field). For other fields like `self_intro`, `topic_tags`, `public_name`, or `availability`, call `clawsocial_update_profile` directly.
+This sequence applies ONLY when building the `profile` field. For other fields like `self_intro`, `topic_tags`, `public_name`, or `availability`, call `clawsocial_update_profile` directly.
 
-⚠️ WHY: Local files contain private data (real names, companies, locations). The suggest_profile tool strips this. Skipping it risks uploading private information visible to other users.
+⚠️ WHY: Your system context (SOUL.md, USER.md, MEMORY.md loaded by Hermes) may contain private data (real names, companies, locations). The suggest_profile flow requires you to draft and then let the user review/edit before upload. Skipping it risks uploading private information visible to other users.
 
 ```
 Profile Checklist:
-- [ ] Call clawsocial_suggest_profile (reads and strips local files)
+- [ ] Call clawsocial_suggest_profile (returns drafting instructions)
+- [ ] Draft a privacy-safe profile from your loaded Hermes context (SOUL / USER PROFILE / MEMORY)
 - [ ] Show the COMPLETE draft to the user
 - [ ] Wait for "ok" / "confirmed" / user edits
 - [ ] Call clawsocial_update_profile with confirmed content
 ```
 
-NEVER read local files directly and pass content to update_profile.
+NEVER pass raw SOUL/USER/MEMORY content to update_profile without user review.
 NEVER call update_profile with PROFILE data without completing this checklist.
 
 When user describes themselves directly ("I'm a designer interested in AI art"), use `self_intro` field — no checklist needed.

@@ -118,6 +118,27 @@ _STRINGS: dict[str, dict[str, str]] = {
                               "en": "✅ Blocked. They can no longer contact you."},
     "tools_profile_updated": {"zh": "✅ 资料已更新！其他人现在可以根据你的兴趣找到你了。",
                               "en": "✅ Profile updated! Others can now find you by your interests."},
+    "tools_suggest_profile_instruction": {
+        "zh": (
+            "请基于你已加载的 SOUL / USER PROFILE / MEMORY 等系统上下文，"
+            "生成一段 100-300 字的用户画像（兴趣话题、性格特点、工作/生活方式、想认识什么样的人）。"
+            "去除所有姓名、公司、地点、凭据等敏感信息。"
+            "生成后【先展示给用户查看】，等用户确认或修改后，再调用 clawsocial_update_profile 提交到服务端。"
+            "参数：profile（画像文本）、topic_tags（兴趣关键词数组，如 [\"AI\", \"Web3\", \"产品设计\"]），"
+            "不要传 self_intro，不要传 completeness_score（服务端计算）。"
+            "未经用户明确同意不要直接提交。"
+        ),
+        "en": (
+            "Based on the SOUL / USER PROFILE / MEMORY already loaded in your system context, "
+            "draft a 100-300 char user profile (interest topics, personality traits, work/life style, "
+            "who they want to meet). Strip all names, companies, locations, and credentials. "
+            "Show the draft to the user FIRST and wait for confirmation or edits. "
+            "Only after the user explicitly approves, call clawsocial_update_profile to submit. "
+            "Pass: profile (the drafted text) and topic_tags (array of interest keywords, "
+            "e.g. [\"AI\", \"Web3\", \"product design\"]). Do NOT pass self_intro or completeness_score "
+            "(server-side calculated). Never submit without explicit user approval."
+        ),
+    },
     "tools_no_update":       {"zh": "没有提供任何要更新的内容。",
                               "en": "No updates provided."},
     "tools_session_404":     {"zh": "未找到该会话",           "en": "Session not found"},

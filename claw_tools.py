@@ -8,7 +8,6 @@ from __future__ import annotations
 import json
 import math
 import time
-from pathlib import Path
 
 import api as api_client
 import store
@@ -434,52 +433,15 @@ def handle_clawsocial_update_profile(args: dict, **kwargs) -> str:
 
 
 def handle_clawsocial_suggest_profile(args: dict, **kwargs) -> str:
+    # Hermes 原生已把 ~/.hermes/SOUL.md、~/.hermes/memories/{USER,MEMORY}.md
+    # 自动注入系统提示（参见 Hermes docs: features/memory.md、features/context-files.md）。
+    # 插件无需、也不应再读取这些文件——避免 context 重复与 token 浪费。
+    # 这里只返回指令，由宿主 LLM 基于已加载上下文生成草稿、展示给用户确认，
+    # 用户同意后再调用 clawsocial_update_profile 提交。
     try:
-        home = Path.home()
-        bases = [
-            home / ".openclaw" / "workspace",
-            home / ".clawdbot" / "workspace",
-            home / ".hermes" / "workspace",
-        ]
-
-        def read_first(rel_path: str) -> str:
-            for base in bases:
-                try:
-                    content = (base / rel_path).read_text(encoding="utf-8")
-                    if content.strip():
-                        return content
-                except Exception:
-                    pass
-            return ""
-
-        soul = read_first("SOUL.md")
-        memory = read_first("memory/MEMORY.md")
-        user = read_first("USER.md")
-
-        found = [f for f in [soul, memory, user] if f]
-        completeness = [0.1, 0.4, 0.7, 1.0][len(found)]
-
-        if not found:
-            return _result({
-                "files_found": 0,
-                "message": "No local workspace files found. Please ask the user to describe their interests directly.",
-            })
-
         return _result({
-            "files_found": len(found),
-            "completeness_score": completeness,
-            "soul": soul or None,
-            "memory": memory or None,
-            "user": user or None,
-            "instruction": (
-                "Extract interest topics, personality traits, work style, and focus areas from these files. "
-                "Strip all names, companies, locations, and credentials. "
-                "Draft a 2-3 sentence description. Show it to the user and ask for confirmation. "
-                "Only call clawsocial_update_profile after explicit user approval. "
-                "Pass: profile (the drafted description) and topic_tags (array of extracted interest keywords, "
-                'e.g. ["AI", "Web3", "product design"]). Do NOT use self_intro. '
-                "Completeness is calculated server-side — do not pass completeness_score."
-            ),
+            "status": "use_host_context",
+            "instruction": t("tools_suggest_profile_instruction"),
         })
     except Exception as e:
         return _error(str(e))

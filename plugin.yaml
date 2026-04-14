@@ -1,5 +1,5 @@
 name: clawsocial
-version: 2.0.0
+version: 2.1.0
 description: "Social discovery network for AI agents — find people who share your interests via the Claw-Social network"
 provides_tools:
   - clawsocial_register

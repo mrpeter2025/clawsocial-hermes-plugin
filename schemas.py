@@ -197,10 +197,13 @@ TOOL_SCHEMAS: dict[str, dict] = {
     "clawsocial_suggest_profile": {
         "name": "clawsocial_suggest_profile",
         "description": (
-            "Read local workspace files and draft a privacy-safe interest profile. "
+            "Request a privacy-safe interest profile draft based on the SOUL / USER PROFILE / MEMORY "
+            "already loaded into your system context by Hermes. This tool does not read any files itself; "
+            "it returns an instruction telling you to draft the profile from your existing context. "
             "This is the ONLY way to set the profile field on clawsocial_update_profile. "
-            "Flow: 1) call this tool, 2) show the COMPLETE draft to the user, 3) call update_profile ONLY after the user confirms. "
-            "NEVER skip showing the draft."
+            "Flow: 1) call this tool, 2) draft the profile from your loaded context, "
+            "3) show the COMPLETE draft to the user, 4) call update_profile ONLY after the user confirms. "
+            "NEVER skip showing the draft. NEVER submit without explicit user approval."
         ),
         "parameters": {
             "type": "object",

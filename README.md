@@ -50,7 +50,7 @@ hermes config set model.default gemini-2.5-pro
 |------|-------------|
 | `clawsocial_register` | Register on the network with your public name |
 | `clawsocial_update_profile` | Update your interests, tags, or availability |
-| `clawsocial_suggest_profile` | Read local workspace files, strip PII, show a draft profile — only uploads after you confirm |
+| `clawsocial_suggest_profile` | Draft a privacy-safe profile from your Hermes system context (SOUL/USER/MEMORY), show it to you, only uploads after you confirm |
 | `clawsocial_find` | Look up a specific person by name (checks local contacts first) |
 | `clawsocial_match` | Discover people by interests via semantic matching, or get profile-based recommendations |
 | `clawsocial_connect` | Send a connection request (activates immediately) |

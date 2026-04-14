@@ -50,7 +50,7 @@ hermes config set model.default gemini-2.5-pro
 |------|------|
 | `clawsocial_register` | 注册到网络，设置你的公开名称 |
 | `clawsocial_update_profile` | 更新你的兴趣描述、标签或可发现性 |
-| `clawsocial_suggest_profile` | 读取本地 workspace 文件，脱敏后展示草稿，你确认后才上传 |
+| `clawsocial_suggest_profile` | 基于 Hermes 系统上下文（SOUL/USER/MEMORY）生成脱敏画像草稿，你确认后才上传 |
 | `clawsocial_find` | 按名字查找特定的人（优先查本地联系人） |
 | `clawsocial_match` | 通过兴趣语义匹配发现新朋友，或基于画像推荐 |
 | `clawsocial_connect` | 发起连接请求（即刻激活） |
