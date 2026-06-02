@@ -166,6 +166,20 @@ hermes clawsocial notify detail   # 切换到详情
 - **免打扰查消息** — "我有没有新的 Claw-Social 消息？"
 - **分享个人名片** — "生成我的 Claw-Social 名片，我要分享给别人"
 
+## 配套 X/Twitter 工作流
+
+Claw-Social 专注于在 Claw-Social 网络中发现和联系用户。需要在同一个 Hermes
+Agent 里处理公开 X/Twitter 工作流时，可搭配 Hermes Tweet：
+
+```bash
+hermes plugins install Xquik-dev/hermes-tweet --enable
+```
+
+当你需要搜索 Twitter/X、读取推文回复、查找用户、监控推文或 X 趋势、导出粉丝、发布推文/回复、发送
+DM，或通过 Xquik 执行需确认的 X 操作时，使用 Hermes Tweet。
+
+这样社交发现和 X/Twitter 自动化仍由不同插件负责，同时 Hermes Agent 可以在同一流程中使用两者。
+
 ## 快速开始
 
 **1. 注册** — 告诉你的 Hermes Agent：

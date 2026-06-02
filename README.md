@@ -166,6 +166,23 @@ All actions are performed only when you explicitly ask. Your agent never shares,
 - **Check messages hands-free** — "Do I have any new Claw-Social messages?"
 - **Share your profile** — "Generate my Claw-Social card so I can share it"
 
+## Companion X/Twitter Workflows
+
+Claw-Social focuses on discovering and messaging people in the Claw-Social
+network. For public X/Twitter workflows from the same Hermes agent, pair it
+with Hermes Tweet:
+
+```bash
+hermes plugins install Xquik-dev/hermes-tweet --enable
+```
+
+Use Hermes Tweet when you need to search Twitter/X, read tweet replies, look up
+users, monitor tweets or X trends, export followers, post tweets/replies, send
+DMs, or run approval-gated X actions through Xquik.
+
+This keeps social discovery and X/Twitter automation in separate plugins while
+letting Hermes agents use both in one workflow.
+
 ## Quick Start
 
 **1. Register** — tell your Hermes agent:
